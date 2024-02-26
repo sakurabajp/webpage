@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <title>東の国の眠らない夜ルーレット</title>
+    <link rel="stylesheet" href="index.css">
+    <div class="bg_img"></div>
+    <meta name="author" content="東の国の眠らない夜ルーレット">
+    <meta name="description" content="ここに説明文を記入^ ^">
+</head>
+
+<body>
+    <div class="p1">
+        <p>
+            <button type="button" id="btn" style="font-size: large;">ルーレットをまわす</button>
+            <p id="text" style="font-size: x-large;">{方角}の{自治体}の眠らない{時刻}</p>
+            <script>
+                const button = document.getElementById("btn");
+                const textA = document.getElementById("text");
+                button.addEventListener('click', () => {
+                    const Direction = ['東', '西', '南', '北'];
+                    const Direction1 = Math.floor(Math.random() * Direction.length);
+                    const Direction2 = Direction[Direction1];
+                    const Government = ['国', '州', '県', '都', '郡', '道', '府', '市', '町', '村', '惣', '特別行政区'];
+                    const Government1 = Math.floor(Math.random() * Government.length);
+                    const Government2 = Government[Government1];
+                    const Time = ['暁', '曙', '朝', '昼', '夕', '宵', '夜', '晩', '深夜', '未明'];
+                    const Time1 = Math.floor(Math.random() * Time.length);
+                    const Time2 = Time[Time1];
+                    textA.innerText = (Direction2 + ' の ' + Government2 + ' の眠らない ' + Time2 );
+                });
+            </script>
+        </p>
+    </div>
+</body>
+
+</html>
